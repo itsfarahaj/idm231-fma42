@@ -48,8 +48,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   }
   
   html {
-    /* background: #dbb1dd; */
-    background-image: url(../Final_Content/images/background1.png);
+    background: #dbb1dd;
+  
     font-size: 90%;
     height: 100%;
   }
@@ -99,7 +99,6 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   main {
     grid-area: main;
   }
-
 
 
   /*the circle wrap layout grid*/
@@ -175,76 +174,82 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   
   /* positioning in the circle */
   
-  #aries {
+  #aries fishtown {
     grid-area: aries;
     top: 2.3625rem;
     right: 3rem;
   }
+
   
-  #taurus {
+  #taurus park{
     grid-area: taurus;
     top: 6rem;
     right: 6rem;
   }
   
-  #gemini {
+  #gemini rocky {
     grid-area: gemini;
     right: 11.5rem;
     bottom: 2rem;
     
   }
   
-  #cancer {
+  #cancer chinatown{
     grid-area: cancer;
     right: 6rem;
     bottom: 4rem;
   }
   
-  #leo {
+  #leo ucity{
     grid-area: leo;
     right: 11.2rem;
     bottom: 6rem;
   }
   
-  #virgo {
+  #virgo mfl{
     grid-area: virgo;
     bottom: 13rem;
     right: 6rem;
   }
   
-  #libra {
+  #libra fishtown{
     grid-area: libra;
     right: 3rem;
     bottom: 7rem;
   }
   
-  #scorpio {
+  #scorpio park {
     grid-area: scorpio;
     bottom: 13rem;
   }
   
-  #sagittarius {
+  #sagittarius rocky{
     grid-area: sagittarius;
     left: 5rem;
     bottom: 6rem;
   }
   
-  #capricon {
+  #capricon chinatown {
     grid-area: capricon;
     bottom: 4rem;
   }
   
-  #aquarius {
+  #aquarius ucity{
     grid-area: aquarius;
     left: 5rem;
     bottom: 2rem;
   }
   
-  #pisces {
+  #pisces mfl {
     grid-area: pisces;
     top: 6rem;
   }
   
+
+  #js-click-me {
+    grid-area: pisces;
+    top: 10rem;
+  }
 
   
   #overlay {
@@ -380,8 +385,6 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     text-shadow: 0 0 4px rgba(214, 219, 141, 0.7);
   }
 
-  
-  
   .overlayDesc {
     grid-area: desc;
   }
@@ -446,6 +449,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     align-items: center;
     justify-content: center;
   }
+
   
   .formGroup:last-of-type {
     padding-bottom: 0;

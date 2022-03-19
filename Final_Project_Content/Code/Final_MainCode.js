@@ -10,7 +10,7 @@ function sign(name, image, sound, description, date) {
 
 
 
-
+const audioPlayer = document.querySelector("#speakers");
 const aries = new sign(
   "aries",
   "images/aries.jpeg",
@@ -141,9 +141,6 @@ const createSign = sign => {
 };
 
 
-
-
-
 const buildSigns = () => {
   signList.forEach(signName => {
     const signButton = createSign(signName);
@@ -153,9 +150,6 @@ const buildSigns = () => {
 
 const body = document.getElementById("body");
 const overlayContainer = document.getElementById("overlay");
-
-
-
 
 
 const createInfo = sign => {
@@ -265,6 +259,7 @@ myPromise.then(successMessage => {
       body.appendChild(overlay);
       body.classList.add("noScroll");
 
+
       if (signOverlay.id === "ariesInfo") {
         playSound(aries.sound);
       } else if (signOverlay.id === "taurusInfo") {
@@ -273,7 +268,7 @@ myPromise.then(successMessage => {
         playSound(gemini.sound);
       } else if (signOverlay.id === "cancerInfo") {
         playSound(cancer.sound);
-      } else if (signOverlay.id === "leoInfo") {
+      } else if (signOverlay.id === "leoInfo") { 
         playSound(leo.sound);
       } else if (signOverlay.id === "virgoInfo") {
         playSound(virgo.sound);
@@ -440,6 +435,11 @@ const submitBirthday = event => {
         body.appendChild(overlay);
         body.classList.add("noScroll");
 
+        // find audio HTML element based on zodiac
+        // find audiotrack associated with astrosign 
+        //update audio source with new audio mp3
+        //play audios
+
         if (signOverlay.id === "ariesInfo") {
           playSound(aries.sound);
         } else if (signOverlay.id === "taurusInfo") {
@@ -469,5 +469,46 @@ const submitBirthday = event => {
     };
 
     birthdayForm.addEventListener("submit", submitBirthday);
+   
   }); 
   
+
+  const clickMeButton = document.querySelector(".js-click-me");
+
+clickMeButton.addEventListener("click", function () {
+  const clickMeButtonContent = document.querySelector(".js-hidden-content");
+  clickMeButtonContent.classList.toggle("hidden");
+});
+
+const clickMeButton2 = document.querySelector(".js-click-me-2");
+clickMeButton2.addEventListener("click", function () {
+  const clickMeButtonContent2 = document.querySelector(".js-hidden-content-2");
+  if (clickMeButtonContent2.style.display == "none") {
+    clickMeButtonContent2.style.display = "block";
+  } else {
+    clickMeButtonContent2.style.display = "none";
+  }
+});
+
+const multipleButtons = document.querySelectorAll(".js-button");
+multipleButtons.forEach((element) => {
+  // console.log("start of the loop");
+  // console.log(element);
+  // console.log("end of the loop");
+  element.addEventListener("click", function () {
+    // Default remove all existing open divs.
+    // TODO: THIS PARTTTTTT
+
+    const allButtons = document.querySelector("[data-content]");
+    allButtons.classList.remove("hidden");
+
+    // [data-button-for="content1"] or [data-button-for="content2"] or [data-button-for="content3"]
+    const currentButtonValue = element.getAttribute("data-button-for");
+    // [data-content="content1"] or [data-content="content2"] or [data-content="content3"]
+    const matchingContentElement = document.querySelector(
+      '[data-content="' + currentButtonValue + '"]'
+    );
+    matchingContentElement.classList.toggle("hidden");
+  });
+});
+
